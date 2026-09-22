@@ -1,15 +1,14 @@
-import os
 import pickle
 import numpy as np
 import pandas as pd
 import streamlit as st
 
 
-BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-pipe = pickle.load(open(os.path.join(BASE_DIR, "model.pkl"), "rb"))
+
+pipe = pickle.load(open('model.pkl', "rb"))
 
 
-df = pd.read_csv(os.path.join(BASE_DIR, "C:\\Users\\DELL\\Downloads\\Car details v3.csv"))
+df = pd.read_csv("Car details v3.csv")
 st.set_page_config(page_title='Car Price Prediction',page_icon="🚘",layout="centered")
 st.title("🚗 Car Price Prediction")
 st.caption("Enter your car details to estimate its selling price.")
